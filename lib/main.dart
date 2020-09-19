@@ -19,7 +19,7 @@ class MyHomePage extends StatelessWidget {
     Transaction(
         id: 't1', title: 'New Shoes', amount: 69.99, date: DateTime.now()),
     Transaction(
-        id: 't2', title: 'New Shoes bis', amount: 19, date: DateTime.now()),
+        id: 't2', title: 'New Shoes bis', amount: 19.45, date: DateTime.now()),
   ];
 
   MyHomePage({Key key}) : super(key: key);
@@ -58,7 +58,7 @@ class MyHomePage extends StatelessWidget {
                               ),
                               padding: EdgeInsets.all(10),
                               child: Text(
-                                tx.amount.toString(),
+                                '\$${tx.amount} ',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20,
