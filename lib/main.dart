@@ -22,8 +22,10 @@ class MyHomePage extends StatelessWidget {
     Transaction(
         id: 't2', title: 'New Shoes bis', amount: 19.45, date: DateTime.now()),
   ];
-  String titleInput;
-  String amountInput;
+  //String titleInput;
+  //String amountInput;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
 
   MyHomePage({Key key}) : super(key: key);
 
@@ -56,17 +58,13 @@ class MyHomePage extends StatelessWidget {
                         decoration: InputDecoration(
                           labelText: 'Title',
                         ),
-                        onChanged: (val) {
-                          titleInput = val;
-                        },
+                        controller: titleController,
                       ),
                       TextField(
                         decoration: InputDecoration(
                           labelText: 'Amount',
                         ),
-                        onChanged: (val) {
-                          amountInput = val;
-                        },
+                        controller: amountController,
                       ),
                       FlatButton(
                         child: Text(
@@ -74,8 +72,9 @@ class MyHomePage extends StatelessWidget {
                         ),
                         textColor: Colors.purple,
                         onPressed: () {
-                          print(titleInput);
-                          print(amountInput);
+                          print(titleController.text);
+                          // print(titleInput);
+                          // print(amountInput);
                         },
                       )
                     ],
